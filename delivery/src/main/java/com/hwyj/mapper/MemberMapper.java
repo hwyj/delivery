@@ -4,6 +4,7 @@ import com.hwyj.domain.MemberVO;
 
 public interface MemberMapper {
 	
-	public MemberVO read(String id);
+	//멤보정보 읽기 (로그인 등)
+	public MemberVO read(String id); 
 
 }

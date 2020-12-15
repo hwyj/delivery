@@ -19,7 +19,8 @@
 		<result property="auth" column="auth" />
 	</resultMap>
 	
-	<select id="read" resultMap="memberMap">
+<!-- 	멤버정보읽기, 로그인 등 -->
+	<select id="read" resultMap="memberMap"> 
 		select member.id, pw, m_name, enabled, auth from member left outer join auth on member.id=auth.id
 		where member.id=#{id}
 	</select>

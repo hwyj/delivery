@@ -8,6 +8,9 @@
 
 	<bean id="bcryptPasswordEncoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	
+	<bean id="customUserDetailsService"
+		class="com.hwyj.security.CustomUserDetailsService"></bean>
 
 
 	<security:http auto-config="true" use-expressions="true">
@@ -15,6 +18,9 @@
 		<security:intercept-url pattern="/test/securityTest" access="hasRole('ROLE_MEMBER')" /> 
 	<!-- 위에 페이지로 접근하려고 하면 로그인 페이지 열림 -->
 		<security:form-login  />
+		
+		<security:logout logout-url="/logout" invalidate-session="true" />
+		
 	<!-- 403 접근제한 페이지 처리 -->
 	<security:access-denied-handler error-page="/accessError" /> 
 	
@@ -22,11 +28,12 @@
 	
 	<security:authentication-manager>
 		
-		<security:authentication-provider>
-<!-- 			<security:jdbc-user-service data-source-ref="dataSource" /> -->
-			<security:jdbc-user-service data-source-ref="dataSource"
-			users-by-username-query="select id, pw, enabled from member where id=?"
-			authorities-by-username-query="select id, auth from auth where id=?" />
+		<security:authentication-provider
+		 user-service-ref="customUserDetailsService">
+		 
+<!-- 			<security:jdbc-user-service data-source-ref="dataSource" -->
+<!-- 			users-by-username-query="select id, pw, enabled from member where id=?" -->
+<!-- 			authorities-by-username-query="select id, auth from auth where id=?" /> -->
 			
 			<security:password-encoder
 			ref="bcryptPasswordEncoder" />

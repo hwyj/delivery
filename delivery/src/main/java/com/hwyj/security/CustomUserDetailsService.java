@@ -5,22 +5,29 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.hwyj.domain.MemberVO;
 import com.hwyj.mapper.MemberMapper;
+import com.hwyj.security.domain.CustomUser;
 
+import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 public class CustomUserDetailsService implements UserDetailsService {
 	
-	@Autowired
-	private MemberMapper mapper;
+	@Setter(onMethod_= { @Autowired })
+	private MemberMapper memberMapper;
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String id) throws UsernameNotFoundException {
 		
-		log.warn(""+username);
+		log.warn("아이디: "+id);
 		
-		return null;
+		MemberVO memberVO=memberMapper.read(id);
+		
+		log.warn("멤버정보: "+memberVO);
+		
+		return memberVO == null ? null:new CustomUser(memberVO); //memberVO가 있으면 CustomUser 객체 생성
 	}
 
 }

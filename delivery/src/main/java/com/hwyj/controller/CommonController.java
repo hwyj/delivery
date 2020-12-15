@@ -16,8 +16,13 @@ public class CommonController {
 		
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/login") //로그인 페이지
 	public void login() {
+		
+	}
+	
+	@GetMapping("/logout") //로그아웃 페이지
+	public void logout() {
 		
 	}
 	
