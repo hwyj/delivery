@@ -1,5 +1,6 @@
 package com.hwyj.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import lombok.extern.log4j.Log4j;
 public class CommonController {
 	
 	//로그인 테스트용 나중에 지우기
+	@PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')") //auth가 ROLE_ADMIN이랑 ROLE_MEMBER일때만 페이지 열 수 있음
 	@GetMapping("/test/securityTest") //이 주소 요청하면 아래 /login 페이지 열림
 	public void securityTest() {
 		

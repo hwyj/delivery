@@ -15,16 +15,18 @@
 
 	<security:http auto-config="true" use-expressions="true">
 	
-		<security:intercept-url pattern="/test/securityTest" access="hasRole('ROLE_MEMBER')" /> 
-	<!-- 위에 페이지로 접근하려고 하면 로그인 페이지 열림 -->
-		<security:form-login  />
-		
-		<security:logout logout-url="/logout" invalidate-session="true" />
-		
+		<security:form-login login-page="/login" />
+				
 	<!-- 403 접근제한 페이지 처리 -->
 	<security:access-denied-handler error-page="/accessError" /> 
 	
+	<!-- 쿠키유효시간 -->
+	<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800"/> <!-- 1주일? -->	
+<!-- 	로그아웃시 쿠키 삭제 -->
+	<security:logout logout-url="/logout" invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
+	
 	</security:http>
+	
 	
 	<security:authentication-manager>
 		
