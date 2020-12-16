@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-시큐리티테스트
-
-<a href="../logout">로그아웃페이지로</a>
+시큐리티 테스트
 </body>
 </html>
