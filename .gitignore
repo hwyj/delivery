@@ -1,6 +1,8 @@
 *.properties
 # Created by https://www.gitignore.io/api/java
 
+*.MF
+
 
 # Compiled class file
 *.class
