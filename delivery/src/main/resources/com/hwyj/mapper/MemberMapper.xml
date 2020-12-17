@@ -32,9 +32,8 @@
 	</select>
 	
 <!-- 	멤버 삭제 -->
-	<delete id="deleteMember ">
+	<delete id="deleteMember">
 		delete from member where id=#{id}
-		delete from auth where id=#{id}
 	</delete>
 
 

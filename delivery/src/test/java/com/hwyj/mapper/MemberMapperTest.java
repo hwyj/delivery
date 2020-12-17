@@ -38,7 +38,7 @@ public class MemberMapperTest {
 	
 	@Test //멤버 삭제 테스트
 	public void testDeleteMember() {
-		log.info("멤버 삭제 확인: "+mapper.deletMember("user5"));
+		log.info("멤버 삭제 확인: "+mapper.deleteMember("user48"));
 	}
 
 }
