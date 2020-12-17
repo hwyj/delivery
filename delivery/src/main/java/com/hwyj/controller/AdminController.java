@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hwyj.service.MemberService;
 
@@ -26,6 +27,7 @@ public class AdminController {
 	public void MemberList(String auth, Model model) {
 		//#memberList 열때 기본을 멤버로 열고 매장,관리자는 나중에 따로 선택해서 여는걸로 만들기
 		model.addAttribute("memberList", memberService.getMemberList(auth));
+		model.addAttribute("auth", auth);
 	}
 
 }
