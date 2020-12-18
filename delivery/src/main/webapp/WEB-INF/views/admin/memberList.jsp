@@ -288,12 +288,12 @@
                     <table class="table table-hover">
                       <thead>
                         <tr>
-                          <th>#아이디</th>
-                          <th>#이름</th>
-                          <th>#주소</th>
-                          <th>#이메일</th>
-                          <th>#권한?</th>
-                          <th>#권한?</th>
+                          <th class="font-weight-bold">#아이디</th>
+                          <th class="font-weight-bold">#이름</th>
+                          <th class="font-weight-bold">#주소</th>
+                          <th class="font-weight-bold">#이메일</th>
+                          <th class="font-weight-bold">#전화번호</th>
+                          <th class="font-weight-bold">#권한?</th>
                         </tr>
                       </thead>
                       <c:forEach items="${memberList }" var="member">
@@ -303,10 +303,10 @@
                           <td><c:out value="${member.m_name }" /></td>
                           <td><c:out value="#주소" /></td>
                           <td><c:out value="#이메일" /></td>
-                          <td class="text-success" id="auth"><c:out value="${auth }" /><i class="mdi mdi-arrow-up"></i>
+                          <td class="text-info" id="auth">010-1234-5678<i class="mdi mdi-arrow-up"></i>
                           </td>
                           <td>
-                            <label class="badge badge-warning">권한</label>
+                            <label id="authT" class="badge badge-warning"><c:out value="${auth }" /></label>
                           </td>
                         </tr>
                         </c:forEach>
@@ -339,19 +339,26 @@
     <!-- Custom js for this page-->
     <script src="../resources/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
     <!-- End custom js for this page-->
-  </body>
-  
-  <script>
-  var auth="${auth}";
-  $(document).ready(function(){
-	  if(auth=="ROLE_MEMBER"){
-		  $("#auth").html("일반회원");
-	  }else if(auth=="ROLE_RES"){
-		  $("#auth").html("매장");
+    
+    <script>
+    
+//     첫줄만 바뀌는거 고치기!
+  $(document).ready(function(){ 
+	  var auth='<c:out value="${auth}"/>';
+	  if(auth == "ROLE_MEMBER"){
+		  $("#authT").html("일반회원");
+		  $("#authT").addClass(".badge badge-warning");
+	  }else if(auth == "ROLE_RES"){
+		  $("#authT").html("매장");
+		  $("#authT").addClass(".badge badge-info");
 	  }else{
-		  $("#auth").html("관리자");
+		  $("#authT").html("관리자");
+		  $("#authT").addClass(".badge badge-danger");
 	  }
 	  
   });
+  
   </script>
+  
+  </body>  
 </html>
