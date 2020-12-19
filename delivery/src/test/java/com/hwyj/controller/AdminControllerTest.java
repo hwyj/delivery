@@ -37,5 +37,11 @@ public class AdminControllerTest {
 		log.info("글 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberList").param("auth", "ROLE_RES"))
 		.andReturn().getModelAndView().getModelMap());
 	}
+	
+	@Test //멤버정보 상세하게 보는 페이지 테스트
+	public void tesMembertInfo() throws Exception {
+		log.info("글 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberInfo").param("id", "user4"))
+		.andReturn().getModelAndView().getModelMap());
+	}
 
 }

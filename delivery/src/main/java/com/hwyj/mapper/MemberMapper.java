@@ -6,7 +6,10 @@ import com.hwyj.domain.MemberVO;
 
 public interface MemberMapper {
 	
-	//멤버정보 읽기 (로그인 등)
+	//로그인
+	public MemberVO login(String id);
+	
+	//멤버정보 상세보기
 	public MemberVO read(String id);
 	
 	//권한별로 멤버 목록 보기 (관리자 페이지에서)

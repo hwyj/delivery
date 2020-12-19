@@ -20,12 +20,18 @@ public class MemberMapperTest {
 	@Autowired
 	private MemberMapper mapper;
 	
-	@Test
-	public void testRead() { //멤버 정보 읽는 테스트
-		
-		MemberVO memberVO=mapper.read("admin90");
-		log.info("read.... "+memberVO);
+	@Test //로그인 멤버정보 읽기 테스트
+	public void testLogin() {
+		MemberVO memberVO=mapper.login("admin90");
+		log.info("login----------- ");
 		memberVO.getAuthList().forEach(authVO -> log.info(authVO));
+		
+	}
+	
+	@Test //멤버정보 상세보기 테스트
+	public void testRead() { 	
+		MemberVO memberVO=mapper.read("admin90");
+		log.info("read------------- "+memberVO);
 	}
 	
 	@Test //권한별 멤버 목록 보기 테스트

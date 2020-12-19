@@ -285,6 +285,20 @@
                   <div class="card-body">
                     <h4 class="card-title">#회원목록</h4>
                     <p class="card-description"> #Add class <code>.table-hover</code> </p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary">#권한</button>
+                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div id="r-drop" class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton4">
+                          <h6 class="dropdown-header font-weight-bold">#권한</h6>
+                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_MEMBER">#일반사용자</a>
+                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_RES">#매장</a>
+                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_ADMIN">#관리자</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                      </div>
                     <table class="table table-hover">
                       <thead>
                         <tr>
@@ -299,7 +313,7 @@
                       <c:forEach items="${memberList }" var="member">
                       <tbody>
                         <tr>
-                          <td><c:out value="${member.id }" /></td>
+                          <td><a href="/admin/memberInfo?id=${member.id }"><c:out value="${member.id }" /></a></td>
                           <td><c:out value="${member.m_name }" /></td>
                           <td><c:out value="#주소" /></td>
                           <td><c:out value="#이메일" /></td>
@@ -326,6 +340,7 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
+    
     <!-- plugins:js -->
     <script src="../resources/assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="../resources/assets/vendors/js/vendor.bundle.addons.js"></script>
@@ -355,6 +370,13 @@
 		  $("#authT").html("관리자");
 		  $("#authT").addClass(".badge badge-danger");
 	  }
+	  
+	//드롭다운 @@@마우스 치우면 다시 올라가는 법 찾아보기 + 오른쪽으로 치우는 법@@@
+	  $("#dropdownMenuSplitButton4").on("click", function(){ 
+		  $("#r-drop.dropdown-menu").stop().slideToggle(500);
+		  
+	  });
+
 	  
   });
   

@@ -23,7 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		
 		log.warn("아이디: "+id);
 		
-		MemberVO memberVO=memberMapper.read(id);
+		MemberVO memberVO=memberMapper.login(id);
 		
 		log.warn("멤버정보: "+memberVO);
 		

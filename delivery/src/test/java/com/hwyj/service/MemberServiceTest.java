@@ -29,12 +29,25 @@ public class MemberServiceTest {
 	}
 	
 	@Test //권한별로 멤버 목록보기 테스트
-	public void getList() {
+	public void getMemberList() {
 		List<MemberVO> memberList=service.getMemberList("ROLE_ADMIN");
 		log.info("목록보기-----------------");
 		for(MemberVO temp : memberList) {
 			log.info(temp);
 		}
+	}
+	
+	@Test //멤버정보 상세보기 테스트
+	public void getMemberInfo() {
+		MemberVO memberVO = new MemberVO();
+		memberVO=service.getMemberInfo("user4");
+		log.info("멤버정보: "+memberVO);
+	}
+	
+	@Test //멤버삭제 테스트
+	public void deleteMemberTest() {
+		service.deleteMember("user59");
+		log.info("멤버삭제 성공여부: "+service.deleteMember("user58")); //true or false
 	}
 
 }
