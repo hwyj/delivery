@@ -8,6 +8,9 @@
 </head>
 <body>
 시큐리티 테스트 <br />
-<a href="/logout">로그아웃 페이지로</a>
+<form action="/logout" method="post">
+<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
+<button type="submit">로그아웃</button>
+</form>
 </body>
 </html>

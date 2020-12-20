@@ -28,11 +28,15 @@ public class MemberMapperTest {
 		
 	}
 	
-	@Test //멤버정보 상세보기 테스트
-	public void testRead() { 	
-		MemberVO memberVO=mapper.read("admin90");
-		log.info("read------------- "+memberVO);
+	@Test //내정보 수정 테스트
+	public void testUpdate() {
+		MemberVO memberVO = new MemberVO();
+		memberVO.setId("user10");
+		memberVO.setPw("1234");
+		memberVO.setM_name("수정이름");
+		log.info("내정보 수정 성공이면 1: "+mapper.update(memberVO));
 	}
+	
 	
 	@Test //권한별 멤버 목록 보기 테스트
 	public void testGetList() {
@@ -40,6 +44,12 @@ public class MemberMapperTest {
 		for(MemberVO temp : memberList) {
 			log.info(temp);
 		}		
+	}
+	
+	@Test //멤버정보 상세보기 테스트
+	public void testRead() { 	
+		MemberVO memberVO=mapper.read("admin90");
+		log.info("read------------- "+memberVO);
 	}
 	
 	@Test //멤버 삭제 테스트

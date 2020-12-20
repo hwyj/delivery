@@ -33,7 +33,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "index";
+		return "index"; //index 페이지가 기본 페이지
 	}
 	
 }

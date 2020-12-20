@@ -33,15 +33,16 @@ public class AdminControllerTest {
 	}
 	
 	@Test //멤버 목록보는 페이지 테스트
-	public void tesMembertList() throws Exception {
-		log.info("글 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberList").param("auth", "ROLE_RES"))
+	public void testMembertList() throws Exception {
+		log.info("멤버목록보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberList").param("auth", "ROLE_RES"))
 		.andReturn().getModelAndView().getModelMap());
 	}
 	
 	@Test //멤버정보 상세하게 보는 페이지 테스트
-	public void tesMembertInfo() throws Exception {
-		log.info("글 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberInfo").param("id", "user4"))
+	public void testMembertInfo() throws Exception {
+		log.info("멤버 정보 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberInfo").param("id", "user4"))
 		.andReturn().getModelAndView().getModelMap());
 	}
+	
 
 }
