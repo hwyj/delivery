@@ -31,11 +31,11 @@ public class MemberMapperTest {
 	@Test //내정보 수정 테스트
 	public void testUpdate() {
 		MemberVO memberVO = new MemberVO();
-		memberVO.setId("user10");
-		memberVO.setPw("1234");
+		memberVO.setId("user55");
 		memberVO.setM_name("수정이름");
 		log.info("내정보 수정 성공이면 1: "+mapper.update(memberVO));
 	}
+	
 	
 	
 	@Test //권한별 멤버 목록 보기 테스트

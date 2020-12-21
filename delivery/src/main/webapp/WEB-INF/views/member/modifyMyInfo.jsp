@@ -292,10 +292,6 @@
                         <input type="text" name="id" class="form-control" id="exampleInputId" value='<sec:authentication property="principal.memberVO.id"/>' readonly>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPass">#비밀번호</label>
-                        <input type="password" name="pw" class="form-control" id="exampleInputPass" value='<sec:authentication property="principal.memberVO.pw"/>'>
-                      </div>
-                      <div class="form-group">
                         <label for="exampleInputName">#이름</label>
                         <input type="text" name="m_name" class="form-control" id="exampleInputName" value='<sec:authentication property="principal.memberVO.m_name"/>'>
                       </div>

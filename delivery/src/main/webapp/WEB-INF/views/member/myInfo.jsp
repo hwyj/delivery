@@ -311,7 +311,7 @@
                         <label for="exampleInputRegdate">#가입날짜</label>
                         <input type="text" class="form-control" id="exampleInputRegdate" readonly>
                       </div>                                      
-                      <button type="submit" class="btn btn-inverse-warning btn-fw" id="modify">#정보수정</button>
+                      <button type="submit" class="btn btn-inverse-warning btn-fw" id="modify">#정보수정</button>                  
                       <button type="button" class="btn btn-inverse-secondary">#####</button>                     
                     </form>
                   </div>

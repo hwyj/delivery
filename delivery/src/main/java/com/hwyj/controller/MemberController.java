@@ -34,7 +34,7 @@ public class MemberController {
 		
 	}
 	
-	//내정보 수정 페이지
+	//내정보 수정페이지
 	@GetMapping("modifyMyInfo")
 	public void modifyMyInfo() {
 		
@@ -48,5 +48,7 @@ public class MemberController {
 		}	
 		return "redirect:/member/myInfo";
 	}
+	
+	
 
 }
