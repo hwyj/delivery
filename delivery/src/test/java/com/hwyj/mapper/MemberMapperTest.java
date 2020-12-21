@@ -48,7 +48,7 @@ public class MemberMapperTest {
 	
 	@Test //멤버정보 상세보기 테스트
 	public void testRead() { 	
-		MemberVO memberVO=mapper.read("admin90");
+		MemberVO memberVO=mapper.read("user3");
 		log.info("read------------- "+memberVO);
 	}
 	

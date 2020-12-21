@@ -293,7 +293,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName">#이름</label>
-                        <input type="text" name="m_name" class="form-control" id="exampleInputName" value='<sec:authentication property="principal.memberVO.m_name"/>'>
+                        <input type="text" name="m_name" maxlength="20" class="form-control" id="exampleInputName" value='<sec:authentication property="principal.memberVO.m_name"/>'>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputAddress">#주소</label>
