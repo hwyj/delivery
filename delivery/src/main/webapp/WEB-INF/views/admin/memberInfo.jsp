@@ -316,7 +316,7 @@
                         <input type="text" class="form-control" id="exampleInputAuth" value='<c:out value="${memberInfo.auth }"/>' disabled>
                       </div>                     
                       <button type="submit" class="btn btn-inverse-danger mr-2" id="mDelete">#회원삭제</button>
-                      <button type="button" class="btn btn-inverse-secondary">#목록보기</button>
+                      <button type="button" id="mList" class="btn btn-inverse-secondary">#목록보기</button>
                       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     </form>
                   </div>
@@ -336,6 +336,11 @@
     </div>
     <!-- container-scroller -->
     
+    <!-- 모달창 부분 -->                     
+
+
+    
+    
     <!-- plugins:js -->
     <script src="../resources/assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="../resources/assets/vendors/js/vendor.bundle.addons.js"></script>
@@ -351,13 +356,20 @@
     <!-- End custom js for this page-->
     
 <script>
-$(document).ready(function(){
-	
-	//회원삭제 버튼 누르면 삭제할건지 묻는 모달창 뜨고 거기서 확인 눌렀을 때 submit 가는 거 구현해야 됨
-	
-	
+
+
+
+$("#mList").on("click", function(){ //목록보기 누르면 멤버리스트로 이동
+	self.location="/admin/memberList?auth=<c:out value="${memberInfo.auth}"/>";
 });
+
+
+	
 </script>
+
+
+
+
 
   </body>
 </html>

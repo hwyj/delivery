@@ -6,8 +6,8 @@
 <mapper namespace="com.hwyj.mapper.RestaurantMapper">
 	
 <!--  메뉴보기 -->
-	<select id="readMenu" resultType="com.hwyj.domain.ResMenuVO">
-	select id, menu_name, menu_info, price from res_menu where id=#{id}
+	<select id="readMenu" resultType="com.hwyj.domain.ResMenuVO">	
+	select m_name, menu_name, menu_info, price from menu left outer join member on member.id=menu.id where menu.id=#{id}
 	</select>
 	
 
