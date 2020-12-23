@@ -32,11 +32,5 @@
 
 	<mybatis-spring:scan base-package="com.hwyj.mapper" />
 	<context:component-scan base-package="com.hwyj.service"></context:component-scan>
-<<<<<<< HEAD
-	
-
-
-=======
->>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 		
 </beans>

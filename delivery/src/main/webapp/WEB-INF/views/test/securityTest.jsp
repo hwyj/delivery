@@ -7,14 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-시큐리티 테스트
-=======
 시큐리티 테스트 <br />
 <form action="/logout" method="post">
 <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" />
 <button type="submit">로그아웃</button>
 </form>
->>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 </body>
 </html>

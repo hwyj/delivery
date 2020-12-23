@@ -33,11 +33,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-<<<<<<< HEAD
-		return "home";
-=======
 		return "index"; //index 페이지가 기본 페이지
->>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 	}
 	
 }

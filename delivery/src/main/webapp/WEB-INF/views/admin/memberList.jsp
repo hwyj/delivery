@@ -2,457 +2,127 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>#회원관리</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../resources/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../resources/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-    <link rel="stylesheet" href="../resources/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../resources/assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../resources/assets/vendors/css/vendor.bundle.addons.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../resources/assets/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="../resources/assets/css/demo_1/style.css">
-    <!-- End Layout styles -->
-    <link rel="shortcut icon" href="../resources/assets/images/favicon.ico" />
-  </head>
-  <body>
-    <div class="container-scroller">
-      <!-- partial:../resources/partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-          <a class="navbar-brand brand-logo" href="../resources/index.html">
-            <img src="../resources/assets/images/logo.svg" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="../resources/index.html">
-            <img src="../resources/assets/images/logo-mini.svg" alt="logo" /> </a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
-                </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-fr"></i>
-                  </div>French
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ae"></i>
-                  </div>Arabic
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ru"></i>
-                  </div>Russian
-                </a>
-              </div>
-            </li>
-          </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
+<%@include file="../includes/header.jsp" %>
+
+      <!-- Tables
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="tables">#회원목록</h1>
             </div>
-          </form>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline"></i>
-                <span class="count">7</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../resources/assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../resources/assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <img src="../resources/assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
-                  </div>
-                  <div class="preview-item-content flex-grow py-2">
-                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
-                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count bg-success">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item py-3 border-bottom">
-                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0"> Just now </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p class="font-weight-light small-text mb-0"> Private message </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
-                  </div>
-                </a>
-              </div>
-            </li>
-            <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="../resources/assets/images/faces/face8.jpg" alt="Profile image"> </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="../resources/assets/images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
-                </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
-              </div>
-            </li>
-          </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-          </button>
-        </div>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:../resources/partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="../resources/assets/images/faces/face8.jpg" alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">Allen Moreno</p>
-                  <p class="designation">Premium user</p>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
-              <a class="nav-link" href="../resources/index.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Basic UI Elements</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/ui-features/buttons.html">Buttons</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/ui-features/dropdowns.html">Dropdowns</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/ui-features/typography.html">Typography</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../resources/pages/forms/basic_elements.html">
-                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">Form elements</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../resources/pages/charts/chartjs.html">
-                <i class="menu-icon typcn typcn-th-large-outline"></i>
-                <span class="menu-title">Charts</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../resources/pages/tables/basic-table.html">
-                <i class="menu-icon typcn typcn-bell"></i>
-                <span class="menu-title">Tables</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../resources/pages/icons/font-awesome.html">
-                <i class="menu-icon typcn typcn-user-outline"></i>
-                <span class="menu-title">Icons</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <i class="menu-icon typcn typcn-document-add"></i>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-              </a>
-              <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/samples/blank-page.html"> Blank Page </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/samples/login.html"> Login </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/samples/register.html"> Register </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/samples/error-404.html"> 404 </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../resources/pages/samples/error-500.html"> 500 </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">#회원목록</h4>
-                    <p class="card-description"> #Add class <code>.table-hover</code> </p>
-<<<<<<< HEAD
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>#아이디</th>
-                          <th>#이름</th>
-                          <th>#주소</th>
-                          <th>#이메일</th>
-                          <th>#권한?</th>
-                          <th>#권한?</th>
-                        </tr>
-                      </thead>
-                      <c:forEach items="${memberList }" var="member">
-                      <tbody>
-                        <tr>
-                          <td><c:out value="${member.id }" /></td>
-                          <td><c:out value="${member.m_name }" /></td>
-                          <td><c:out value="#주소" /></td>
-                          <td><c:out value="#이메일" /></td>
-                          <td class="text-success" id="auth"><c:out value="${auth }" /><i class="mdi mdi-arrow-up"></i>
-                          </td>
-                          <td>
-                            <label class="badge badge-warning">권한</label>
-                          </td>
-                        </tr>
-                        </c:forEach>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            
-          <!-- content-wrapper ends -->
-          <!-- partial:../resources/partials/_footer.html -->
-       
-          <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
+ 
+ <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-info">#권한</button>
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+      <a class="dropdown-item" href="/admin/memberList?auth=ROLE_MEMBER">일반회원</a>
+      <a class="dropdown-item" href="/admin/memberList?auth=ROLE_RES">매장</a>
+      <a class="dropdown-item" href="/admin/memberList?auth=ROLE_ADMIN">관리자</a>
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../resources/assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../resources/assets/vendors/js/vendor.bundle.addons.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="../resources/assets/js/shared/off-canvas.js"></script>
-    <script src="../resources/assets/js/shared/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../resources/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
-    <!-- End custom js for this page-->
-  </body>
-  
-  <script>
-  var auth="${auth}";
-  $(document).ready(function(){
-	  if(auth=="ROLE_MEMBER"){
-		  $("#auth").html("일반회원");
-	  }else if(auth=="ROLE_RES"){
-		  $("#auth").html("매장");
-	  }else{
-		  $("#auth").html("관리자");
-	  }
-	  
-  });
-  </script>
-=======
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary">#권한</button>
-                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <div id="r-drop" class="dropdown-menu" aria-labelledby="dropdownMenuSplitButton4">
-                          <h6 class="dropdown-header font-weight-bold">#권한</h6>
-                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_MEMBER">#일반사용자</a>
-                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_RES">#매장</a>
-                          <a class="dropdown-item" href="/admin/memberList?auth=ROLE_ADMIN">#관리자</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                      </div>
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th class="font-weight-bold">#아이디</th>
-                          <th class="font-weight-bold">#이름</th>
-                          <th class="font-weight-bold">#주소</th>
-                          <th class="font-weight-bold">#이메일</th>
-                          <th class="font-weight-bold">#전화번호</th>
-                          <th class="font-weight-bold">#권한?</th>
-                        </tr>
-                      </thead>
-                      <c:forEach items="${memberList }" var="member">
-                      <tbody>
-                        <tr>
-                          <td><a href="/admin/memberInfo?id=${member.id }"><c:out value="${member.id }" /></a></td>
-                          <td><c:out value="${member.m_name }" /></td>
-                          <td><c:out value="#주소" /></td>
-                          <td><c:out value="#이메일" /></td>
-                          <td class="text-info" id="auth">010-1234-5678<i class="mdi mdi-arrow-up"></i>
-                          </td>
-                          <td>
-                            <label id="authT" class="badge badge-warning"><c:out value="${auth }" /></label>
-                          </td>
-                        </tr>
-                        </c:forEach>
-                      </tbody>
-                    </table>
+  </div>
+</div>
+ 
+ 
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#아이디</th>
+                    <th scope="col">#이름</th>
+                    <th scope="col">#주소</th>
+                    <th scope="col">#이메일</th>
+                    <th scope="col">#전화번호</th>
+                    <th scope="col">#권한</th>
+                  </tr>
+                </thead>
+                <c:forEach items="${memberList }" var="member">
+                <tbody>
+                  <tr class="table-active">
+                    <th scope="row"><a href="/admin/memberInfo?id=${member.id }"><c:out value="${member.id }" /></a></th>
+                    <td><c:out value="${member.m_name }" /></td>
+                    <td><c:out value="#주소" /></td>
+                    <td><c:out value="#이메일" /></td>
+                    <td><c:out value="#010-1234-5678" /></td>
+                    <td id="authT"><c:out value="${auth }" /></td>
+                  </tr> 
+                  </c:forEach>                     
+                </tbody>
+              </table>
+          
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Dialogs
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="dialogs">Dialogs</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Modals</h2>
+            <div class="bs-component">
+              <div class="modal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            
-          <!-- content-wrapper ends -->
-          <!-- partial:../resources/partials/_footer.html -->
-       
-          <!-- partial -->
+            </div>
+          </div>
         </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    
-    <!-- plugins:js -->
-    <script src="../resources/assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../resources/assets/vendors/js/vendor.bundle.addons.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="../resources/assets/js/shared/off-canvas.js"></script>
-    <script src="../resources/assets/js/shared/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../resources/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
-    <!-- End custom js for this page-->
-    
-    <script>
-    
-//     첫줄만 바뀌는거 고치기!
+
+      <div id="source-modal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Source Code</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <pre contenteditable></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+<script>   
+//안되는거 고치기!
   $(document).ready(function(){ 
 	  var auth='<c:out value="${auth}"/>';
 	  if(auth == "ROLE_MEMBER"){
-		  $("#authT").html("일반회원");
-		  $("#authT").addClass(".badge badge-warning");
+		  $("#authT").html("일반회원");		 
 	  }else if(auth == "ROLE_RES"){
 		  $("#authT").html("매장");
-		  $("#authT").addClass(".badge badge-info");
 	  }else{
 		  $("#authT").html("관리자");
-		  $("#authT").addClass(".badge badge-danger");
 	  }
-	  
-	//드롭다운 @@@마우스 치우면 다시 올라가는 법 찾아보기 + 오른쪽으로 치우는 법@@@
-	  $("#dropdownMenuSplitButton4").on("click", function(){ 
-		  $("#r-drop.dropdown-menu").stop().slideToggle(500);
-		  
-	  });
-
-	  
-  });
+	  	  
+  });  
   
-  </script>
+</script>
   
-  </body>  
->>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
-</html>
+<%@include file="../includes/footer.jsp" %>
