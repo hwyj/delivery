@@ -40,7 +40,7 @@
             <li class="nav-item"><a class="nav-link" href="#contact-us"><span>TEST</span></a></li>
             <li class="nav-item"><a class="nav-link" href="/member/myPage"><span>MyPage</span></a></li>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <li class="nav-item"><a class="nav-link" href="/admin/memberList?auth=ROLE_MEMBER"><span>#회원관리</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="/admin/memberList?auth=ROLE_MEMBER"><span>#관리자페이지</span></a></li>
             </sec:authorize>
         </ul>
     </div>

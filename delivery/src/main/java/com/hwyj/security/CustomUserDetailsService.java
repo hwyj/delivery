@@ -9,6 +9,7 @@ import com.hwyj.domain.MemberVO;
 import com.hwyj.mapper.MemberMapper;
 import com.hwyj.security.domain.CustomUser;
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 
