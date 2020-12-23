@@ -19,6 +19,47 @@
 		<result property="auth" column="auth" />
 	</resultMap>
 	
+<<<<<<< HEAD
+<!-- 	멤버정보읽기, 로그인 등 -->
+	<select id="read" resultMap="memberMap"> 
+		select member.id, pw, m_name, enabled, auth from member left outer join auth on member.id=auth.id
+		where member.id=#{id}
+	</select>
+	
+	
+	
+<!-- 	멤버 목록보기 (auth별로 보기) -->
+	<select id="getMemberList" resultMap="memberMap"> 
+		select member.id, pw, m_name, enabled, auth from member left outer join auth on member.id=auth.id
+		where auth=#{auth}
+	</select>
+	
+<!-- 	멤버 삭제 -->
+	<delete id="deleteMember">
+		delete from member where id=#{id}
+	</delete>
+	
+	<insert id="insertCustomer" parameterType="com.hwyj.domain.CustomerVO"> 
+		INSERT into testdb.member(id, pw, m_name, email)
+		VALUES (#{id}	,
+		 		#{pw} 	,
+		 	#{m_name}	 , 
+			#{email})
+	</insert>
+	
+	<!-- 	중복 -->
+	<select id="selectCustomer" parameterType="com.hwyj.domain.CustomerVO" resultMap="memberMap">
+ 	select id from member
+     where id = #{id}
+</select>
+	
+	
+	
+	
+
+	
+	
+=======
 <!-- 	로그인 -->
 	<select id="login" resultMap="memberMap"> 
 		select member.id, pw, m_name, enabled, auth from member left outer join auth on member.id=auth.id
@@ -48,6 +89,7 @@
 	<delete id="deleteMember">
 		delete from member where id=#{id}
 	</delete>
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 
 
 </mapper>

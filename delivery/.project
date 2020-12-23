@@ -3,6 +3,10 @@
 	<name>delivery</name>
 	<comment></comment>
 	<projects>
+<<<<<<< HEAD
+		<project>Servers</project>
+=======
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 	</projects>
 	<buildSpec>
 		<buildCommand>

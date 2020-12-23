@@ -33,6 +33,12 @@ public class AdminControllerTest {
 	}
 	
 	@Test //멤버 목록보는 페이지 테스트
+<<<<<<< HEAD
+	public void tesMembertList() throws Exception {
+		log.info("글 상세보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberList").param("auth", "ROLE_RES"))
+		.andReturn().getModelAndView().getModelMap());
+	}
+=======
 	public void testMembertList() throws Exception {
 		log.info("멤버목록보기: "+mockMvc.perform(MockMvcRequestBuilders.get("/admin/memberList").param("auth", "ROLE_RES"))
 		.andReturn().getModelAndView().getModelMap());
@@ -44,5 +50,6 @@ public class AdminControllerTest {
 		.andReturn().getModelAndView().getModelMap());
 	}
 	
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 
 }

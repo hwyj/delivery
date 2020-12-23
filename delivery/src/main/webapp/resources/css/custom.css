@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url(http://fonts.googleapis.com/ealyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/ealyaccess/hanna);
 * {
@@ -6,4 +7,14 @@
 	
 	h1 {font-family : 'Hanna';
 	}
+=======
+@import url(http://fonts.googleapis.com/ealyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/ealyaccess/hanna);
+* {
+	font-family : 'Nanum Gothic';
+	}
+	
+	h1 {font-family : 'Hanna';
+	}
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 	

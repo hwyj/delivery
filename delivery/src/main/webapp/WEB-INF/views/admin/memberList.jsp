@@ -285,6 +285,77 @@
                   <div class="card-body">
                     <h4 class="card-title">#회원목록</h4>
                     <p class="card-description"> #Add class <code>.table-hover</code> </p>
+<<<<<<< HEAD
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>#아이디</th>
+                          <th>#이름</th>
+                          <th>#주소</th>
+                          <th>#이메일</th>
+                          <th>#권한?</th>
+                          <th>#권한?</th>
+                        </tr>
+                      </thead>
+                      <c:forEach items="${memberList }" var="member">
+                      <tbody>
+                        <tr>
+                          <td><c:out value="${member.id }" /></td>
+                          <td><c:out value="${member.m_name }" /></td>
+                          <td><c:out value="#주소" /></td>
+                          <td><c:out value="#이메일" /></td>
+                          <td class="text-success" id="auth"><c:out value="${auth }" /><i class="mdi mdi-arrow-up"></i>
+                          </td>
+                          <td>
+                            <label class="badge badge-warning">권한</label>
+                          </td>
+                        </tr>
+                        </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            
+          <!-- content-wrapper ends -->
+          <!-- partial:../resources/partials/_footer.html -->
+       
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../resources/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../resources/assets/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="../resources/assets/js/shared/off-canvas.js"></script>
+    <script src="../resources/assets/js/shared/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../resources/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End custom js for this page-->
+  </body>
+  
+  <script>
+  var auth="${auth}";
+  $(document).ready(function(){
+	  if(auth=="ROLE_MEMBER"){
+		  $("#auth").html("일반회원");
+	  }else if(auth=="ROLE_RES"){
+		  $("#auth").html("매장");
+	  }else{
+		  $("#auth").html("관리자");
+	  }
+	  
+  });
+  </script>
+=======
                     <div class="btn-group">
                         <button type="button" class="btn btn-secondary">#권한</button>
                         <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuSplitButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -383,4 +454,5 @@
   </script>
   
   </body>  
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 </html>

@@ -1,5 +1,51 @@
 package com.hwyj.controller;
 
+<<<<<<< HEAD
+import java.util.Locale;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.hwyj.domain.CustomerVO;
+import com.hwyj.service.MemberService;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@Log4j
+@RequestMapping("/admin/*")
+@AllArgsConstructor
+public class AdminController {
+	
+	private MemberService memberService;
+	
+	
+	
+	//@PreAuthorize("hasAnyRole('ROLE_ADMIN')") //관리자만 들어올 수 있는 페이지 (주석처리 나중에 없애기)
+	@GetMapping("/memberList") //멤버 리스트 보는 페이지
+	public void MemberList(String auth, Model model) {
+		//#memberList 열때 기본을 멤버로 열고 매장,관리자는 나중에 따로 선택해서 여는걸로 만들기
+		model.addAttribute("memberList", memberService.getMemberList(auth));
+		model.addAttribute("auth", auth);
+	}
+	
+	@GetMapping("/insertCustomer") 
+	public void insertCustomer(Locale locale, CustomerVO csVO,Model model) {
+		model.addAttribute("memberList", memberService.insertCustomer(csVO));
+
+	}
+	
+	/*
+	 * @GetMapping("/selectCustomer") public void selectCustomer(Locale locale,
+	 * CustomerVO csVO,Model model) { model.addAttribute("memberList",
+	 * memberService.selectCustomer(csVO));
+	 * 
+	 * }
+	 */
+=======
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,5 +94,6 @@ public class AdminController {
 		}		
 		return "redirect:/admin/memberList?auth="+url; //삭제되는 멤버의 권한이 들어간 멤버리스트 가기
 	}
+>>>>>>> branch 'main' of https://github.com/hwyj/delivery.git
 
 }
