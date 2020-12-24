@@ -57,7 +57,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/">#Main</a>
+              <a class="nav-link" href="../help/">#</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://blog.bootswatch.com/">#Blog</a>

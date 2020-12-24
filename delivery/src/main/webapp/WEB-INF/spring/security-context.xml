@@ -11,8 +11,7 @@
 	
 	<bean id="customUserDetailsService"
 		class="com.hwyj.security.CustomUserDetailsService"></bean>
-		
-				
+
 
 	<security:http auto-config="true" use-expressions="true">
 	

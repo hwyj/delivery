@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hwyj.domain.MemberVO;
 import com.hwyj.security.CustomUserDetailsService;
 import com.hwyj.service.AdminService;
 import com.hwyj.service.MemberService;
